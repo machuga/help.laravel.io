@@ -51,6 +51,11 @@
             </ol>
             <button type="button" id="add-file">Add Another File</button>
         </li>
+        <li>
+            <h3>What is the name of this framework? (checking that you're indeed human)</h3>
+            <input name="check1" value="" type="hidden" />
+            <input type="text" name="check2" />
+        </li>
     </ol>
     <input type="submit" value="Save Paste">
 </form>
@@ -76,5 +81,5 @@
 </script>
 
 @section('javascripts')
-    <script src="/javascripts/create.js"></script>
-@show
+<script src="/javascripts/create.js"></script>
+@stop

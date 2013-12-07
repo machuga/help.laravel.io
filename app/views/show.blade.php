@@ -1,4 +1,5 @@
 <header>
+    <h1>Problem</h1>
     <p>{{{ $paste->problem }}}</p>
     <dl>
         <dt>Version</dt>
@@ -41,5 +42,5 @@
 </section>
 
 @section('javascripts')
-    <script>hljs.initHighlighting()</script>
-@show
+<script>hljs.initHighlighting()</script>
+@stop

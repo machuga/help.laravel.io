@@ -21,16 +21,26 @@ class PasteController extends BaseController
         $pasteForm = new PasteForm(Input::get('paste'));
 
         if ($pasteForm->save()) {
-            $paste   = $pasteForm->getPaste();
-            $url     = URL::route('show', [$paste->uid]);
-            $message = trans('messages.paste.success', compact('url'));
-
-            Session::flash('success', $message);
-            return Redirect::to($url);
+            return $this->pasteCreated($pasteForm);
         } else {
-            Session::flash('error', trans('messages.paste.error'));
-            Session::flash('errors', $pasteForm->errors());
-            return $this->create();
+            return $this->pasteFailed($pasteForm);
         }
+    }
+
+    protected function pasteCreated($pasteForm)
+    {
+        $paste   = $pasteForm->paste();
+        $url     = URL::route('show', [$paste->uid]);
+        $message = trans('messages.paste.success', compact('url'));
+
+        Session::flash('success', $message);
+        return Redirect::to($url);
+    }
+
+    protected function pasteFailed($pasteForm)
+    {
+        Session::flash('error', trans('messages.paste.error'));
+        Session::flash('errors', $pasteForm->errors());
+        return $this->create();
     }
 }

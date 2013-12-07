@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', ['as' => 'create', 'uses' => 'PasteController@create']);
-Route::post('/', ['as' => 'store', 'uses' => 'PasteController@store']);
+Route::post('/', ['as' => 'store', 'uses' => 'PasteController@store', 'before' => 'honeypot']);
 Route::get('/{paste}', ['as' => 'show', 'uses' => 'PasteController@show']);
 
 Route::bind('paste', function($value) {

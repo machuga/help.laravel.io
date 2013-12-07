@@ -1,5 +1,21 @@
 <?php
 
+Route::filter('honeypot', function() {
+    $input          = Input::all();
+    $honeypotFields = Config::get('honeypot');
+
+    foreach (Config::get('honeypot') as $name => $value) {
+        if (!isset($input[$name])) {
+            return App::abort(500, trans("messages.honeypot.missing_fields"));
+        }
+
+        if (strcasecmp($input[$name], $value) !== 0) {
+            $params = ['name' => $name, 'ip' => Request::server('REMOTE_ADDR')];
+            Log::info(trans("messages.honeypot.log", $params));
+            return App::abort(500, trans("messages.honeypot.failed"));
+        }
+    }
+});
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters

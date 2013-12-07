@@ -4,6 +4,7 @@ class PasteForm
 {
     protected $paste;
     protected $files = [];
+    protected $errors = [];
 
     public function __construct($input = [])
     {
@@ -20,17 +21,33 @@ class PasteForm
 
     public function save()
     {
-        if ($this->paste->save()) {
+        $saved = false;
+
+        if ($this->valid() && $this->paste->save()) {
             foreach ($this->files as $file) {
                 $this->paste->files()->save($file);
             }
-
-            return true;
+            $saved = true;
         }
+
+        return $saved;
     }
 
-    public function getPaste()
+    public function valid()
+    {
+        if (count($this->files) > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function paste()
     {
         return $this->paste;
+    }
+
+    public function errors()
+    {
+        return $this->errors;
     }
 }

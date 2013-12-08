@@ -1,4 +1,4 @@
-<form action="" method="post" accept-charset="utf-8">
+<form class="create-paste" action="/" method="post" accept-charset="utf-8">
     <ol>
         <li>
             <h3>Question/Problem Description</h3>
@@ -29,27 +29,31 @@
                 Related Files (Controllers, Models, Views, Helpers,
                 Routes, etc.)
             </h3>
-            <ol id="files">
-                <li>
-                    <p>
-                        <label>Type of File</label>
-                        <select name="paste[file][0][file_type]">
-                            @foreach ($fileTypes as $key => $name)
-                                <option val="{{ $key }}">{{ $name }}</option>
-                            @endforeach
-                        </select>
-                    </p>
-                    <p>
-                        <label>File Name</label>
-                        <input type="input" name="paste[file][0][name]" placeholder="Filename.php (optional)">
-                    </p>
-                    <p>
-                        <label>Code</label>
-                        <textarea name="paste[file][0][code]"></textarea>
-                    </p>
+            <ol class="files" id="files">
+                <li class="file">
+                    <div class="form">
+                        <p>
+                            <label>Type of File</label>
+                            <select name="paste[file][0][file_type]">
+                                @foreach ($fileTypes as $key => $name)
+                                    <option val="{{ $key }}">{{ $name }}</option>
+                                @endforeach
+                            </select>
+                        </p>
+                        <p>
+                            <label>File Name</label>
+                            <input type="input" name="paste[file][0][name]" placeholder="Filename.php (optional)">
+                        </p>
+                        <p>
+                            <label>Code</label>
+                            <textarea name="paste[file][0][code]"></textarea>
+                        </p>
+                    </div>
+                    <div class="controls">
+                    </div>
                 </li>
             </ol>
-            <button type="button" id="add-file">Add Another File</button>
+            <button class="button" type="button" id="add-file">Add Another File</button>
         </li>
         <li>
             <h3>What is the name of this framework? (checking that you're indeed human)</h3>
@@ -57,27 +61,33 @@
             <input type="text" name="check2" />
         </li>
     </ol>
-    <input type="submit" value="Save Paste">
+    <p class="form-controls">
+        <input class="button" type="submit" value="Save Paste">
+    </p>
 </form>
 
 <script type="text/template" id="file-template">
-    <p>
-        <label>Type of File</label>
-        <select name="paste[file][<%= id %>][file_type]">
-            @foreach ($fileTypes as $key => $name)
-                <option val="{{ $key }}">{{ $name }}</option>
-            @endforeach
-        </select>
-    </p>
-    <p>
-        <label>File Name</label>
-        <input type="input" name="paste[file][<%= id %>][name]" placeholder="Filename.php (optional)">
-    </p>
-    <p>
-        <label>Code</label>
-        <textarea name="paste[file][<%= id %>][code]"></textarea>
-    </p>
-    <button type="button" class="remove-file">&times;</button>
+    <div class="form">
+        <p>
+            <label>Type of File</label>
+            <select name="paste[file][<%= id %>][file_type]">
+                @foreach ($fileTypes as $key => $name)
+                    <option val="{{ $key }}">{{ $name }}</option>
+                @endforeach
+            </select>
+        </p>
+        <p>
+            <label>File Name</label>
+            <input type="input" name="paste[file][<%= id %>][name]" placeholder="Filename.php (optional)">
+        </p>
+        <p>
+            <label>Code</label>
+            <textarea name="paste[file][<%= id %>][code]"></textarea>
+        </p>
+    </div>
+    <div class="controls">
+        <button type="button" class="button remove-file">&times;</button>
+    </div>
 </script>
 
 @section('javascripts')

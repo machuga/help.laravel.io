@@ -1,0 +1,337 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300);
+
+
+/* ==========================================================================
+   Grid settings
+   ========================================================================== */
+
+$column: 70px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 100%;
+
+/* ==========================================================================
+   Visual grid settings
+   ========================================================================== */
+$visual-grid: false;
+$visual-grid-color: gray;
+
+/* ==========================================================================
+   Custom settings
+   ========================================================================== */
+$lioRed:            #F0523F;
+$lioGrey:           #444;
+$topbar-bg:         $lioGrey;
+
+$primary-color:     $lioRed;
+$secondary-color:   $lioGrey;
+
+/* ==========================================================================
+   Anchors
+   ========================================================================== */
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.button {
+    text-align: center;
+    background: $primary-color;
+    padding: 10px;
+    border:none;
+    color: #fff;
+}
+
+.button {
+    &.full {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+$tertiary-color: #f3f3f3;
+
+html {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+section {
+    margin: inherit 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $secondary-color;
+}
+
+.page-header {
+    @include outer-container;
+    background-color: $tertiary-color;
+    h1 {
+        font-weight: bold;
+        padding: 0 20px;
+        @include span-columns(8);
+    }
+
+    nav {
+        text-align: right;
+        font-size: 2em;
+        padding: 0 20px;
+        margin: 20px auto;
+        @include span-columns(4);
+        @include omega();
+    }
+}
+
+.page-footer {
+    border-top: 1px solid $secondary-color;
+    text-align: center;
+    padding: 20px;
+}
+
+.new-paste:hover{
+    background-color: darken($primary-color, 10%);
+}
+
+main {
+    padding: auto 20px;
+    @include outer-container;
+
+    .create-paste {
+        textarea {
+            width: 80ex;
+            height: 10em;
+        }
+
+        .form-controls {
+            border-top: 1px solid $tertiary-color;
+            padding: 20px;
+        }
+        .files {
+            li {
+                margin-top: 0;
+                @include outer-container;
+                .form {
+                    @include span-columns(8);
+                }
+
+                .controls {
+                    @include span-columns(4);
+                    @include omega();
+                }
+            }
+        }
+    }
+    .show-paste {
+        section {
+            padding: 10px 20px;
+            h1 {
+                border-bottom: 1px solid $secondary-color;
+            }
+        }
+        .meta {
+            @include outer-container;
+            p {
+                @include span-columns(6);
+                @include omega(2n);
+                span {
+                    font-weight: bold;
+                }
+                padding: 0 20px;
+            }
+            border-bottom: 1px dashed $secondary-color;
+            padding: 0;
+        }
+        .issue {
+            @include outer-container;
+            div {
+                @include span-columns(6);
+                @include omega(2n);
+            }
+        }
+
+        .behavior {
+            .behaviors {
+                @include outer-container;
+                div {
+                    padding: 0 20px;
+                    background-color: white;
+                    @include span-columns(6);
+
+                    h2 {
+                        margin-top: 0;
+                    }
+                }
+                .expected {
+                    border-right: 1px solid $tertiary-color;
+                }
+                .actual {
+                    @include omega();
+                }
+            }
+        }
+
+        .files {
+            .file {
+                background-color: $tertiary-color;
+                padding: 0 20px;
+                margin-bottom: 15px;
+
+                .heading {
+                    @include outer-container;
+                    text-align: center;
+                    .file-name {
+                        padding: 5px;
+                        margin: 0 auto;
+                        background-color: $secondary-color;
+                        color: $tertiary-color;
+                        @include span-columns(6);
+                    }
+                    .file-type {
+                        padding: 5px;
+                        margin: 0 auto;
+                        background-color: $secondary-color;
+                        color: $tertiary-color;
+                        @include span-columns(3);
+                        @include shift(3);
+                        @include omega();
+                    }
+                }
+            }
+        }
+    }
+
+    form {
+    }
+}
+
+.page-footer {
+    @include outer-container;
+}
+
+
+
+/* ==========================================================================
+   HEADER NAVIGATION (mobile first module)
+   ========================================================================== */
+
+// MOBILE STYLES ////////////////////////////////////////////////////////////
+
+.top-navigation {
+    @include outer-container;
+    background-color: $secondary-color;
+    position: relative;
+}
+
+.top-navigation-logo {
+    float:left;
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.top-navigation-items {
+    float:left;
+    margin: 2.25rem 0 0 0.25rem;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size:0.8rem;
+    padding:0;
+    li {
+        display: inline-block;
+        margin:0 1rem;
+        a {
+            color:#eee;
+            text-decoration: none;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.top-navigation-signin-desktop {
+    display: none;
+}
+
+.top-navigation-signin-mobile {
+    text-align: center;
+    list-style: none;
+    margin:0;
+    padding:0;
+    background: darken($secondary-color, 10%);
+    li {
+        padding: 0.5rem 0;
+        font-size:0.9rem;
+        a {
+            color:#bbb;
+            text-decoration: none;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// BREAKPOINT 1 (480) ////////////////////////////////////////////////////////////
+
+@media only screen and (min-width: 480px) {
+
+    .top-navigation-signin-mobile {
+        display: none;
+    }
+    .top-navigation-signin-desktop {
+        display: inline-block;
+        text-align: right;
+        list-style: none;
+        float:right;
+        padding:0;
+        margin: 1.70rem 1rem 0 0;
+        font-size:0.8rem;
+        li {
+            padding: 0.5rem 0;
+            font-size:0.9rem;
+            a {
+                color:#bbb;
+                text-decoration: none;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    .dashboard-word {
+        display: none;
+    }
+}
+
+
+// BREAKPOINT 2 (768) ////////////////////////////////////////////////////////////
+
+@media only screen and (min-width: 768px) {
+
+    .top-navigation-logo {
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    }
+    .top-navigation-items {
+        margin: 2.25rem 0 0 0.75rem;
+    }
+    .top-navigation-signin-desktop {
+        margin: 1.75rem 2rem 0 0;
+    }
+    .dashboard-word {
+        display: inline-block;
+    }
+
+}

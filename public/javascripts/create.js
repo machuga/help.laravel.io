@@ -11,11 +11,11 @@
     };
 
     $('#add-file').on('click', function(e) {
-        var li  = document.createElement('li'),
+        var el  = document.createElement('article'),
             id  = new Date().getTime() + Math.random(),
             tpl = render('file-template', {id: id});
 
-        $(li).html(tpl).appendTo('#files');
+        $(el).addClass('file').html(tpl).appendTo('#files');
     });
 
     $('#files').on('click', '.remove-file', function(e) {

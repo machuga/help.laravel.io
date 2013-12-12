@@ -29,8 +29,8 @@
                 Related Files (Controllers, Models, Views, Helpers,
                 Routes, etc.)
             </h3>
-            <ol class="files" id="files">
-                <li class="file">
+            <section class="files" id="files">
+                <article class="file">
                     <div class="form">
                         <p>
                             <label>Type of File</label>
@@ -51,8 +51,8 @@
                     </div>
                     <div class="controls">
                     </div>
-                </li>
-            </ol>
+                </article>
+            </section>
             <button class="button" type="button" id="add-file">Add Another File</button>
         </li>
         <li>

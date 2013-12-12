@@ -168,16 +168,12 @@ main {
                     padding: 0 20px;
                     background-color: white;
                     @include span-columns(6);
+                    @include omega(2n);
 
                     h2 {
                         margin-top: 0;
+                        border-bottom: 1px solid $tertiary-color;
                     }
-                }
-                .expected {
-                    border-right: 1px solid $tertiary-color;
-                }
-                .actual {
-                    @include omega();
                 }
             }
         }
@@ -185,24 +181,22 @@ main {
         .files {
             .file {
                 background-color: $tertiary-color;
-                padding: 0 20px;
+                padding: 0 20px 5px 20px;
                 margin-bottom: 15px;
 
                 .heading {
                     @include outer-container;
                     text-align: center;
-                    .file-name {
+                    .file-name, .file-type {
                         padding: 5px;
                         margin: 0 auto;
-                        background-color: $secondary-color;
-                        color: $tertiary-color;
+                        background-color: #ccc;
+                        color: $secondary-color;
+                    }
+                    .file-name {
                         @include span-columns(6);
                     }
                     .file-type {
-                        padding: 5px;
-                        margin: 0 auto;
-                        background-color: $secondary-color;
-                        color: $tertiary-color;
                         @include span-columns(3);
                         @include shift(3);
                         @include omega();

@@ -11,11 +11,7 @@
         </div>
         <div>
             <h1>Errors</h1>
-            <pre>
-                <code>
-                    {{{ $paste->errors }}}
-                </code>
-            </pre>
+            <code>{{{ $paste->errors }}}</code>
         </div>
     </section>
 
@@ -44,11 +40,7 @@
                     <h3 class="file-type">{{{ $file->file_type }}}</h3>
                 </div>
                 <div class="codeblock">
-                    <pre>
-                        <code class="php">
-                            {{{ $file->code }}}
-                        </code>
-                    </pre>
+                    <pre><code class="php">{{{ $file->code }}}</code></pre>
                 </div>
             </article>
         @endforeach

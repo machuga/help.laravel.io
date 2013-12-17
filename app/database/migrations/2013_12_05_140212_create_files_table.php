@@ -16,7 +16,7 @@ class CreateFilesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('paste_id')->unsigned()->nullable();
-			$table->integer('name')->nullable();
+			$table->string('name')->nullable();
 			$table->string('file_type', 50)->default('php');
 			$table->text('code');
 			$table->timestamps();

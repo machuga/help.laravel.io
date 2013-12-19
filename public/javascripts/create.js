@@ -19,6 +19,6 @@
     });
 
     $('#files').on('click', '.remove-file', function(e) {
-        $(this).closest('li').remove();
+        $(this).closest('article').remove();
     });
 })(jQuery);

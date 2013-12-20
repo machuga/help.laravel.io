@@ -131,6 +131,11 @@ main {
                     @include omega();
                 }
             }
+            .ace_editor {
+                font-size: 100%;
+                height: 15em;
+                width: 80ex;
+            }
         }
     }
     .show-paste {

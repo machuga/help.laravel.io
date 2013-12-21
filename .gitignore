@@ -5,5 +5,4 @@ composer.lock
 .DS_Store
 Thumbs.db
 .sass-cache
-public/stylesheets/*
 !public/stylesheets/.gitkeep

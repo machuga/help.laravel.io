@@ -136,6 +136,8 @@ main {
     font-size: 100%;
     height: 15em;
     width: 80ex; }
+  main .show-paste .plain {
+    font-family: "Open Sans", sans-serif; }
   main .show-paste section {
     padding: 10px 20px; }
     main .show-paste section h1 {

@@ -7,11 +7,11 @@
     <section class="issue">
         <div class="problem">
             <h1>Problem</h1>
-            <p>{{{ $paste->problem }}}</p>
+            <pre class="plain">{{{ $paste->problem }}}</pre>
         </div>
         <div>
             <h1>Errors</h1>
-            <code>{{{ $paste->errors }}}</code>
+            <pre class="plain">{{{ $paste->errors }}}</pre>
         </div>
     </section>
 
@@ -21,12 +21,12 @@
         <div class="behaviors">
             <div class="expected">
                 <h2>Expected</h2>
-                <p>{{{ $paste->expected }}}</p>
+                <pre class="plain">{{{ $paste->expected }}}</pre>
             </div>
 
             <div class="actual">
                 <h2>Actual</h2>
-                <p>{{{ $paste->actual }}}</p>
+                <pre class="plain">{{{ $paste->actual }}}</pre>
             </div>
         </div>
     </section>
@@ -48,5 +48,8 @@
 </div>
 
 @section('javascripts')
-<script>hljs.initHighlighting()</script>
+<script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlighting();
+</script>
 @stop

@@ -28,6 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 	'production' => ['machuga-apps'],
+	'local' => ['localhost:8000'],
 ));
 
 /*

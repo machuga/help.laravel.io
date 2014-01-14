@@ -141,6 +141,7 @@ main {
     .show-paste {
         .plain {
             font-family: "Open Sans", sans-serif;
+            word-wrap: break-word;
         }
         section {
             padding: 10px 20px;

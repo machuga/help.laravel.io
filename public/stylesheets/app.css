@@ -137,7 +137,8 @@ main {
     height: 15em;
     width: 80ex; }
   main .show-paste .plain {
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    word-wrap: break-word; }
   main .show-paste section {
     padding: 10px 20px; }
     main .show-paste section h1 {

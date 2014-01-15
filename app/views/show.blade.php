@@ -9,6 +9,9 @@
             <h1>Problem</h1>
             <pre class="plain">{{{ $paste->problem }}}</pre>
         </div>
+    </section>
+    
+    <section class="errors">
         <div>
             <h1>Errors</h1>
             <pre class="plain">{{{ $paste->errors }}}</pre>

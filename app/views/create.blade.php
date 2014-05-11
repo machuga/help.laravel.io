@@ -7,6 +7,7 @@
         <li>
             <h3>Which Version of Laravel?</h3>
             <select name="paste[version]">
+                <option value="4.2">4.2.x</option>
                 <option value="4.1">4.1.x</option>
                 <option value="4.0" selected="selected">4.0.x</option>
                 <option value="3.x">3.x</option>

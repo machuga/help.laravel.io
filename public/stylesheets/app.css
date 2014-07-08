@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     float: left;
     margin-right: 2.35765%;
-    width: 65.88078%; }
+    width: 48.82117%; }
     .page-header h1:last-child {
       margin-right: 0; }
   .page-header nav {
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     float: left;
     margin-right: 2.35765%;
-    width: 31.76157%;
+    width: 48.82117%;
     margin-right: 0; }
     .page-header nav:last-child {
       margin-right: 0; }
@@ -137,12 +137,17 @@ main {
     height: 15em;
     width: 80ex; }
   main .show-paste .plain {
+    background: #eee;
     font-family: "Open Sans", sans-serif;
+    margin-bottom: 0;
+    margin-top: -1em;
+    padding: 1em;
     word-wrap: break-word; }
   main .show-paste section {
     padding: 10px 20px; }
     main .show-paste section h1 {
-      border-bottom: 1px solid #444444; }
+      border-bottom: 1px solid #444444;
+      margin-top: 0.5em; }
   main .show-paste .meta {
     *zoom: 1;
     max-width: 100%;
@@ -179,17 +184,6 @@ main {
       display: table; }
     main .show-paste .issue:after {
       clear: both; }
-    main .show-paste .issue div {
-      display: block;
-      float: left;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
-      main .show-paste .issue div:last-child {
-        margin-right: 0; }
-      main .show-paste .issue div:nth-child(2n) {
-        margin-right: 0; }
-      main .show-paste .issue div:nth-child(2n+1) {
-        clear: left; }
   main .show-paste .behavior .behaviors {
     *zoom: 1;
     max-width: 100%;
@@ -218,13 +212,14 @@ main {
         border-bottom: 1px solid #f3f3f3; }
   main .show-paste .files .file {
     background-color: #f3f3f3;
-    padding: 0 20px 5px 20px;
-    margin-bottom: 15px; }
+    padding: 1.25em 1.25em 0.25em 1.25em; }
     main .show-paste .files .file .heading {
       *zoom: 1;
       max-width: 100%;
       margin-left: auto;
       margin-right: auto;
+      background-color: #ccc;
+      color: #111;
       text-align: center; }
       main .show-paste .files .file .heading:before, main .show-paste .files .file .heading:after {
         content: " ";
@@ -232,15 +227,18 @@ main {
       main .show-paste .files .file .heading:after {
         clear: both; }
       main .show-paste .files .file .heading .file-name, main .show-paste .files .file .heading .file-type {
+        font-size: 1em;
+        font-weight: bold;
         padding: 5px;
         margin: 0 auto;
-        background-color: #ccc;
         color: #444444; }
       main .show-paste .files .file .heading .file-name {
         display: block;
         float: left;
         margin-right: 2.35765%;
-        width: 48.82117%; }
+        width: 48.82117%;
+        padding-left: 0.75em;
+        text-align: left; }
         main .show-paste .files .file .heading .file-name:last-child {
           margin-right: 0; }
       main .show-paste .files .file .heading .file-type {
@@ -249,9 +247,15 @@ main {
         margin-right: 2.35765%;
         width: 23.23176%;
         margin-left: 25.58941%;
-        margin-right: 0; }
+        margin-right: 0;
+        font-weight: normal;
+        padding-right: 0.75em;
+        text-align: right; }
         main .show-paste .files .file .heading .file-type:last-child {
           margin-right: 0; }
+    main .show-paste .files .file pre {
+      margin-bottom: 0;
+      margin-top: 0; }
 
 .page-footer {
   *zoom: 1;
